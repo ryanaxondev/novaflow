@@ -4,7 +4,7 @@
 
 **Document Type:** Information Architecture
 
-**Status:** Draft
+**Status:** Approved
 
 **Owner:** Architecture Room
 
