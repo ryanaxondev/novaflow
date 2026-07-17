@@ -19,9 +19,9 @@ Generated UI assets visualize the approved product and design decisions.
 
 ## Generated Assets
 
-| File                 | Version | Status | Purpose                                            |
-| -------------------- | ------- | ------ | -------------------------------------------------- |
-| `homepage-ui-v1.png` | v1      | Draft  | First high-fidelity homepage interface for review. |
+| File                 | Version | Status   | Purpose                                            |
+| -------------------- | ------- | -------- | -------------------------------------------------- |
+| `homepage-ui-v1.png` | v1      | Approved | First high-fidelity homepage interface for review. |
 
 ---
 
