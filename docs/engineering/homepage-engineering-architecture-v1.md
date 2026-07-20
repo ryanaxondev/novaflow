@@ -6,7 +6,7 @@
 
 **Document Type:** Homepage Engineering Architecture
 
-**Status:** Draft
+**Status:** Approved
 
 **Owner:** Architecture Room
 
