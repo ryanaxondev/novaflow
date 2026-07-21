@@ -856,7 +856,7 @@ Entire product
 
 ### Responsibility
 
-Render the standard heading pattern shared across sections.
+Render the standard heading pattern, typography, alignment, and readable text width shared across sections.
 
 ### Owns
 
