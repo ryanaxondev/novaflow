@@ -1080,6 +1080,20 @@ Dependencies must always flow downward.
 
 ---
 
+# API Design Principles
+
+## Expose Variation. Encapsulate Implementation.
+
+Public APIs should expose only legitimate variation between consumers.
+
+Implementation details should remain internal until multiple valid use cases demonstrate the need for abstraction.
+
+Components should not expose configuration solely for potential future reuse.
+
+Prefer evolving APIs through demonstrated requirements rather than speculative flexibility.
+
+---
+
 # Architectural Layers
 
 ```text

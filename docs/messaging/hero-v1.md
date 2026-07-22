@@ -1,14 +1,16 @@
 # NovaFlow
 
-# Hero Messaging Specification
+# Messaging Specification
 
 ## Document Information
 
-**Document Type:** Hero Messaging Specification
+**Document Type:** Messaging Specification
+
+**Artifact:** Hero
 
 **Version:** v1
 
-**Status:** Draft
+**Status:** In Progress
 
 **Owner:** Product
 
@@ -40,7 +42,7 @@ It introduces no new product decisions.
 
 # Guiding Principle
 
-Messaging should communicate approved product decisions clearly rather than introduce new positioning.
+Messaging should communicate approved product decisions clearly rather than introduce new positioning. Clarity takes precedence over creativity.
 
 Every headline, supporting sentence, and call to action should reinforce the approved product strategy while remaining concise, understandable, and conversion-oriented.
 
@@ -68,15 +70,15 @@ Defines:
 - Value proposition
 - Product principles
 
-### Hero Messaging Specification
+### Messaging Specification
 
 Defines:
 
-- Hero headline
+- Headline
 - Supporting copy
 - Primary CTA
 - Secondary CTA
-- Hero communication goals
+- Communication goals
 
 ### Homepage UI Specification
 
