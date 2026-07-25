@@ -111,7 +111,7 @@ What repeatable operations make possible
 
 ## Supporting Copy
 
-None in v1. The headline and six capability descriptions carry the narrative.
+None in v1. The headline and four benefit descriptions carry the narrative.
 
 ## Benefit Outcomes
 
@@ -133,7 +133,7 @@ Maintain quality and consistency as teams and operational volume grow.
 
 ## Audience Takeaway
 
-> NovaFlow combines practical capabilities for defining, running, improving, and scaling repeatable operational workflows.
+> Repeatable operations help growing teams execute consistently, onboard people faster, collaborate with greater clarity, and maintain operational quality as they scale.
 
 This is internal messaging guidance and is not visible copy in v1.
 
@@ -147,11 +147,11 @@ The Features section then demonstrates the product capabilities that make those 
 
 Narrative bridge:
 
+Narrative bridge:
+
 > These outcomes are supported by capabilities that make recurring work clear, guided, connected, and easier to operate consistently.
 
-This bridge is internal messaging guidance. This bridge is internal messaging guidance and is not visible copy in v1.
-
-> This is internal messaging guidance and is not visible copy in v1.
+This is internal messaging guidance and is not visible copy in v1.
 
 The transition must preserve this sequence:
 
