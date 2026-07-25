@@ -1,6 +1,7 @@
 import { Hero } from "@/components/marketing/Hero";
 import { Navbar } from "@/components/marketing/Navbar";
 import { Problem } from "@/components/marketing/Problem";
+import { Solution } from "@/components/marketing/Solution";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <main>
         <Hero />
         <Problem />
+        <Solution />
       </main>
     </>
   );
