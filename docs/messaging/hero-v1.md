@@ -10,7 +10,7 @@
 
 **Version:** v1
 
-**Status:** In Progress
+**Status:** Approved
 
 **Owner:** Product
 
@@ -18,9 +18,10 @@
 
 - Product Specification
 
-**Produces:**
+**Enables:**
 
 - Homepage UI Specification
+- Homepage Engineering Implementation
 
 ---
 
@@ -78,6 +79,7 @@ Defines:
 - Supporting copy
 - Primary CTA
 - Secondary CTA
+- Supporting points
 - Communication goals
 
 ### Homepage UI Specification
@@ -131,11 +133,11 @@ Rather than helping teams manage more tasks, NovaFlow helps them improve how wor
 
 After reading the Hero, a first-time visitor should immediately understand:
 
-- What NovaFlow is.
+- What NovaFlow helps growing teams do.
 - Who NovaFlow is built for.
 - What business problem it solves.
 - Why NovaFlow is different from traditional work-management tools.
-- Why repeatable operational systems matter.
+- Why repeatability matters as teams grow.
 - What action to take next.
 
 The Hero should establish clarity before introducing features, pricing, or supporting evidence.
@@ -146,25 +148,33 @@ The Hero should establish clarity before introducing features, pricing, or suppo
 
 ## Headline
 
-TBD
+Build repeatable systems. Scale with confidence.
 
 ---
 
 ## Supporting Copy
 
-TBD
+NovaFlow helps growing teams standardize how work gets done, so collaboration stays consistent, reliable, and ready to scale—without adding another task-management tool.
 
 ---
 
 ## Primary CTA
 
-TBD
+Request a Demo
 
 ---
 
 ## Secondary CTA
 
-TBD
+View Pricing
+
+---
+
+## Supporting Points
+
+- Standardize processes
+- Reduce manual work
+- Scale with confidence
 
 ---
 
@@ -178,9 +188,14 @@ The Hero messaging is successful when a first-time visitor can understand, withi
 - Why its approach is different.
 - What action to take next.
 
-If these questions cannot be answered after reading the Hero, the messaging should be revised before design or implementation continues.
+The approved messaging must also satisfy the following conditions:
 
-The messaging should communicate value before asking for action.
+- All visible Hero copy matches the approved messaging in this document.
+- The supporting points reinforce the core message without introducing additional product claims.
+- The messaging remains understandable without relying on the product preview.
+- The messaging communicates value before asking for action.
+
+If a first-time visitor cannot infer these points after reading the Hero, the messaging should be revised before future design or implementation changes are approved.
 
 ---
 
@@ -206,7 +221,8 @@ These decisions belong to their respective specifications.
 This artifact is complete when:
 
 - Hero messaging accurately reflects the approved Product Specification.
-- All Hero UI copy has been approved.
-- UI Design can proceed without inventing product messaging.
+- All visible Hero copy has been explicitly defined and approved.
+- UI Design can use the messaging without inventing product claims.
 - Engineering can implement the Hero without making messaging decisions.
+- Supporting points reinforce rather than extend the core product message.
 - No new product decisions have been introduced.
