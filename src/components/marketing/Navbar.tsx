@@ -1,30 +1,30 @@
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 
 const navigation = [
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
-];
+] as const;
 
 export function Navbar() {
   return (
-    <header className="border-b">
+    <header className="sticky top-0 z-50 border-b bg-background">
       <Container>
         <nav
           aria-label="Primary"
-          className="flex h-16 items-center justify-between"
+          className="flex h-16 items-center justify-between gap-6"
         >
           <Link
             href="/"
-            className="text-lg font-semibold"
+            className="shrink-0 text-lg font-semibold"
           >
             NovaFlow
           </Link>
 
-          <ul className="flex items-center gap-8">
+          <ul className="hidden items-center gap-8 md:flex">
             {navigation.map((item) => (
               <li key={item.href}>
                 <Link
@@ -37,10 +37,11 @@ export function Navbar() {
             ))}
           </ul>
 
-          <Link href="#pricing">
-            <Button>
-              Get Started
-            </Button>
+          <Link
+            href="#pricing"
+            className={buttonVariants()}
+          >
+            Get Started
           </Link>
         </nav>
       </Container>
