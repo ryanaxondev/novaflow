@@ -1,4 +1,5 @@
 import { Benefits } from "@/components/marketing/Benefits";
+import { FAQ } from "@/components/marketing/FAQ";
 import { Features } from "@/components/marketing/Features";
 import { Hero } from "@/components/marketing/Hero";
 import { Navbar } from "@/components/marketing/Navbar";
@@ -19,6 +20,7 @@ export default function Home() {
         <Features />
         <SocialProof />
         <Pricing />
+        <FAQ />
       </main>
     </>
   );
