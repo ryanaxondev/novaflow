@@ -47,7 +47,7 @@ function AccordionTrigger({
         <span>{children}</span>
         <ChevronDown
           aria-hidden="true"
-          className="size-4 shrink-0 text-muted-foreground group-data-[panel-open]:rotate-180"
+          className="size-4 shrink-0 text-muted-foreground group-data-panel-open:rotate-180"
           strokeWidth={1.75}
         />
       </AccordionPrimitive.Trigger>
