@@ -7,8 +7,9 @@
 **Document Type:** Product Decision Specification
 **Artifact:** Final CTA Conversion
 **Version:** v1
-**Status:** In Progress
+**Status:** Approved
 **Owner:** Product
+**Approval Date:** July 27, 2026
 
 **Depends On:**
 
@@ -18,12 +19,15 @@
 - `docs/engineering/session-11-architecture-amendment-v1.md`
 - `docs/messaging/hero-v1.md`
 - `docs/messaging/social-proof-pricing-v1.md`
+- `docs/messaging/faq-final-cta-footer-v1.md`
 
 **Enables:**
 
-- Final CTA Messaging Specification
 - Final CTA Implementation
+- FAQ Question 6 Publication
+- Footer Demo Link Integration
 - Homepage Demo Conversion Validation
+- Session 11 Closure
 
 ---
 
@@ -34,18 +38,21 @@ This document freezes the Product decision for the terminal homepage demo-conver
 It defines:
 
 - where internal demo entry points converge,
-- what kind of destination the Final CTA uses,
-- which decisions are already approved,
-- which decisions remain unresolved,
-- what Engineering may and may not implement.
+- the terminal homepage conversion section,
+- the approved external demo-booking provider,
+- the canonical external booking URL,
+- the verified visitor experience,
+- what Engineering is authorized to implement.
 
-It does not define visible Final CTA copy, visual design, component structure, booking-provider configuration, or implementation details.
+It does not define visual layout, component structure, or implementation details.
+
+Visible Final CTA copy remains owned by the approved Messaging Specification.
 
 ---
 
 # Decision Summary
 
-NovaFlow will use a terminal homepage demo section followed by an external demo-booking destination.
+NovaFlow uses a terminal homepage demo section followed by an external Calendly booking destination.
 
 The approved conversion model is:
 
@@ -60,7 +67,7 @@ Footer Request a Demo
         ↓
 Final CTA section
         ↓
-External demo-booking page
+Calendly booking page
 ```
 
 The Final CTA section owns:
@@ -69,7 +76,11 @@ The Final CTA section owns:
 id="request-demo"
 ```
 
-The Final CTA button will link directly to the approved external demo-booking URL.
+The Final CTA button links directly to:
+
+```text
+https://calendly.com/ryanaxondev/novaflow-introductory-demo
+```
 
 ---
 
@@ -90,6 +101,26 @@ This means:
 - NovaFlow does not implement a contact form as part of Final CTA,
 - NovaFlow does not require a `/contact` route for the homepage demo flow,
 - the external booking destination is the final action after the homepage Final CTA.
+
+## Booking Provider
+
+The approved booking provider is:
+
+```text
+Calendly
+```
+
+## Booking Experience
+
+The approved event configuration is:
+
+```text
+Event name: NovaFlow Introductory Demo
+Duration: 30 minutes
+Location: Google Meet
+```
+
+The meeting is an introductory conversation about the visitor’s recurring workflows and how NovaFlow could support a more repeatable way of operating.
 
 ## Internal Conversion Entry Points
 
@@ -114,42 +145,40 @@ The Final CTA section is the single terminal homepage conversion section.
 
 ## Final CTA External Action
 
-The button inside Final CTA must link to:
+The button inside Final CTA must link to the exact approved canonical URL:
 
 ```text
-Approved external demo-booking URL
+https://calendly.com/ryanaxondev/novaflow-introductory-demo
 ```
 
-The exact URL is not yet approved.
+No alternate or fallback destination is approved.
 
 ---
 
-# Current Decision Status
+# Final Decision Status
 
-The following decisions are approved:
+All Product decisions required for the current Final CTA conversion flow are resolved:
 
 ```text
 Conversion model: Homepage anchor followed by an external booking page
 Terminal section anchor: #request-demo
 Final destination type: External demo-booking page
+Booking provider: Calendly
+Booking account owner: Product Owner
+Canonical booking URL: https://calendly.com/ryanaxondev/novaflow-introductory-demo
+Event name: NovaFlow Introductory Demo
+Meeting duration: 30 minutes
+Meeting location: Google Meet
+Availability configuration: Configured and managed in Calendly
 /contact dependency: Not required
 Internal contact form: Not part of Final CTA
+Verification status: Verified
 ```
 
-The following decisions remain open:
+This document is:
 
 ```text
-Booking provider: TBD
-Booking account owner: TBD
-Exact booking URL: TBD
-Availability configuration: TBD
-Meeting duration and scheduling rules: TBD
-```
-
-Because the exact URL is unresolved, this document remains:
-
-```text
-Status: In Progress
+Status: Approved
 ```
 
 ---
@@ -163,12 +192,12 @@ Product owns:
 - the approved booking account,
 - the exact booking URL,
 - the business meaning of the scheduled conversation,
-- any scheduling rules exposed to visitors,
+- scheduling rules exposed to visitors,
 - approval of the final conversion flow.
 
-Engineering does not select or create the booking provider.
+Engineering does not select, replace, or reconfigure the booking provider.
 
-Engineering must not infer the destination from:
+Engineering must not infer an alternate destination from:
 
 - current production code,
 - UI mockups,
@@ -176,40 +205,47 @@ Engineering must not infer the destination from:
 - an example URL,
 - a common provider convention.
 
+Any change to the provider, account, event, or canonical URL requires a new Product decision or an approved amendment to this document.
+
 ---
 
 # Human-Owned Setup
 
-The Product Owner is responsible for completing or approving the external setup required for the destination.
+The Product Owner has completed and verified the external setup required for the destination.
 
-This includes:
+Completed setup includes:
 
-- choosing the booking provider,
-- creating or approving the booking account,
-- configuring the booking page,
-- reviewing the visitor-facing booking-page content,
+- selecting Calendly,
+- creating and configuring the booking event,
+- configuring Google Meet as the meeting location,
+- configuring visitor availability,
+- reviewing the visitor-facing booking page,
 - providing the final canonical URL,
-- confirming that the URL is publicly accessible.
+- confirming public access,
+- completing a test booking,
+- verifying booking confirmation,
+- cancelling the test booking through the visitor cancellation link,
+- verifying cancellation confirmation.
 
-AI or Engineering may support evaluation or implementation after a separate explicit request, but must not create an account, select a provider, or publish a destination without Product Owner approval.
+Calendly account administration and scheduling configuration remain outside the repository.
 
 ---
 
 # Booking URL Requirements
 
-Before the URL can be approved, it must satisfy all of the following:
+The approved canonical URL satisfies the Product requirements:
 
-- use an HTTPS URL,
-- be publicly reachable,
-- lead directly to the intended demo-booking experience,
-- not require an unavailable NovaFlow account,
-- not be a placeholder, test, preview, or temporary URL,
-- not expose private administrative information,
-- use visitor-facing wording consistent with approved NovaFlow positioning,
-- avoid unsupported Product, pricing, security, support, or legal claims,
-- be reviewed by the Product Owner.
+- it uses HTTPS,
+- it is publicly reachable according to Product verification,
+- it leads directly to the intended NovaFlow demo-booking experience,
+- it does not require a NovaFlow account,
+- it is not a placeholder, preview, test, or temporary URL,
+- it does not expose private administrative information,
+- its visitor-facing purpose is consistent with approved NovaFlow positioning,
+- it has been reviewed by the Product Owner,
+- its booking and cancellation flows have been tested.
 
-The canonical URL must be recorded in this document before Final CTA implementation is authorized.
+The canonical URL recorded in this document is the source of truth for Final CTA implementation.
 
 ---
 
@@ -222,7 +258,7 @@ Engineering must not use any of the following as a substitute:
 mailto:
 href="#"
 javascript:
-an invented Calendly URL
+an alternate Calendly URL
 an invented Cal.com URL
 an invented booking-provider URL
 a temporary preview URL
@@ -233,7 +269,7 @@ a checkout route
 
 No fallback destination is approved.
 
-If the exact URL is unavailable, the Final CTA implementation remains blocked.
+If the canonical URL becomes unavailable or must change, the affected conversion implementation must pause until Product approves a replacement.
 
 ---
 
@@ -248,7 +284,7 @@ This decision does not:
 - remove the future Contact page,
 - redefine the Contact page responsibility,
 - prohibit a future sales-contact flow,
-- make the external booking page the only permanent contact mechanism.
+- make Calendly the only permanent contact mechanism.
 
 For the current homepage milestone:
 
@@ -277,7 +313,7 @@ Information Architecture
 → Internal navigation to #request-demo
 
 Product Decision
-→ External demo-booking destination
+→ Calendly demo-booking destination
 
 Messaging
 → Final CTA visible copy and CTA wording
@@ -290,7 +326,7 @@ Engineering
 
 # Relationship to Messaging
 
-This document does not approve Final CTA headline, supporting copy, or visible button wording.
+This document does not own Final CTA headline, supporting copy, or visible button wording.
 
 Those belong to:
 
@@ -298,9 +334,13 @@ Those belong to:
 docs/messaging/faq-final-cta-footer-v1.md
 ```
 
-The Messaging Specification may be approved before the exact booking URL exists.
+The approved visible action is:
 
-However, Messaging must not imply:
+```text
+Request a Demo
+```
+
+Messaging must not imply:
 
 - guaranteed response times,
 - guaranteed availability,
@@ -312,88 +352,53 @@ However, Messaging must not imply:
 - support commitments,
 - sales outcomes.
 
-The visible CTA must describe the approved demo-conversation action and must remain consistent with the external booking destination.
+FAQ question 6 may now be published using its exact approved wording because the external booking destination exists and this Product Decision is Approved.
 
 ---
 
 # Relationship to Engineering
 
-Engineering may prepare the Final CTA component boundary, but must not complete or merge a functional Final CTA button until:
-
-- this document contains the approved exact URL,
-- the scoped Messaging Specification is Approved,
-- the Session 11 Architecture Amendment is Approved,
-- the homepage navigation decision is Approved.
+Engineering is authorized to implement the complete Final CTA conversion flow.
 
 The Final CTA implementation must:
 
 - use the canonical `#request-demo` section anchor,
 - use real link semantics,
-- use the exact approved external URL,
+- use the exact approved canonical URL,
 - preserve accessible focus behavior,
 - avoid click handlers when ordinary link navigation is sufficient,
 - avoid internal redirects or substitute routes,
 - avoid embedding a booking widget unless separately approved.
 
-This document does not decide whether the external link opens in the same tab or a new tab. That behavior must follow the approved UI and Engineering conventions at implementation time.
+This document does not require an embedded Calendly widget.
+
+The approved implementation is an external link from the Final CTA button.
+
+Link-opening behavior must follow the approved UI and Engineering conventions without changing the destination.
 
 ---
 
-# Implementation Blocker
+# Implementation Authorization
 
-Until the exact URL is recorded and approved:
-
-```text
-Final CTA button implementation: Blocked
-```
-
-This blocker does not prevent:
-
-- FAQ Messaging approval,
-- Footer Messaging approval,
-- Final CTA Messaging approval,
-- Accordion implementation,
-- FAQ implementation,
-- Footer component-location correction,
-- Footer implementation using only approved internal destinations,
-- homepage section-anchor preparation.
-
-It does prevent:
-
-- shipping a functional Final CTA button,
-- inventing a placeholder destination,
-- claiming that the homepage conversion flow is complete,
-- closing Session 11.
-
----
-
-# URL Finalization Procedure
-
-When the external booking page is ready:
-
-1. Product provides the canonical URL.
-2. Product verifies the destination and visitor-facing content.
-3. This document is updated with:
-   - provider name,
-   - approved canonical URL,
-   - approval date,
-   - final status.
-4. The document status changes from:
+The previous Final CTA implementation blocker is resolved.
 
 ```text
-In Progress
+Final CTA button implementation: Authorized
 ```
 
-to:
+The following Session 11 work is now authorized:
 
-```text
-Approved
-```
+- implement Final CTA,
+- add `id="request-demo"` to the canonical Final CTA section,
+- link the Final CTA button to the approved Calendly URL,
+- publish FAQ question 6 unchanged,
+- add Footer `Request a Demo → #request-demo`,
+- reconcile Navbar CTA to `Request a Demo → #request-demo`,
+- reconcile Hero primary CTA to `Request a Demo → #request-demo`,
+- validate Pricing CTAs against `#request-demo`,
+- validate the full conversion flow.
 
-5. Engineering implements the Final CTA button using the recorded URL.
-6. The completed flow is validated from every approved demo entry point.
-
-The URL update should be a focused documentation change before or alongside the Final CTA implementation task.
+Engineering must still follow all applicable Architecture, Messaging, Design, and Information Architecture artifacts.
 
 ---
 
@@ -402,25 +407,64 @@ The URL update should be a focused documentation change before or alongside the 
 ## Booking Provider
 
 ```text
-TBD
+Calendly
+```
+
+## Booking Account Owner
+
+```text
+Product Owner
+```
+
+## Event Name
+
+```text
+NovaFlow Introductory Demo
+```
+
+## Meeting Duration
+
+```text
+30 minutes
+```
+
+## Meeting Location
+
+```text
+Google Meet
 ```
 
 ## Canonical Booking URL
 
 ```text
-TBD
+https://calendly.com/ryanaxondev/novaflow-introductory-demo
 ```
 
 ## Product Approval Date
 
 ```text
-TBD
+July 27, 2026
 ```
 
 ## Verification Status
 
 ```text
-Not verified
+Verified
+```
+
+## Verification Record
+
+Product verification completed:
+
+```text
+Public booking page opened successfully: Yes
+Available booking times displayed: Yes
+Test booking completed: Yes
+Booking confirmation email received: Yes
+Google Meet booking flow confirmed: Yes
+Visitor cancellation link tested: Yes
+Test booking cancelled successfully: Yes
+Cancellation confirmation email received: Yes
 ```
 
 ---
@@ -436,17 +480,20 @@ Starter Request a Demo → #request-demo
 Pro Request a Demo → #request-demo
 Enterprise Contact Sales → #request-demo
 Footer Request a Demo → #request-demo
-Final CTA button → approved external booking URL
+Final CTA Request a Demo → https://calendly.com/ryanaxondev/novaflow-introductory-demo
 ```
 
 Also confirm:
 
 - no approved entry point uses `/contact`,
 - no entry point uses a placeholder destination,
-- the external URL returns a valid destination,
-- the visitor can reach the intended booking experience,
+- every internal anchor exists exactly once,
+- the external URL reaches the intended booking experience,
 - the Final CTA button label matches the approved Messaging Specification,
-- no unsupported claims appear on the NovaFlow Final CTA.
+- FAQ question 6 uses the approved wording,
+- no unsupported claims appear on the NovaFlow Final CTA,
+- keyboard focus is visible,
+- browser behavior has no console or runtime errors.
 
 ---
 
@@ -456,9 +503,7 @@ This decision does not authorize:
 
 - creation of a Contact page,
 - creation of an internal booking system,
-- creation of a booking-provider account,
-- booking-provider selection by Engineering,
-- an embedded scheduling widget,
+- an embedded Calendly widget,
 - a contact form,
 - form submission,
 - backend email delivery,
@@ -471,11 +516,20 @@ This decision does not authorize:
 - legal or privacy claims,
 - support or response-time commitments.
 
+It also does not authorize Engineering to:
+
+- change Calendly account settings,
+- change meeting duration,
+- change meeting location,
+- replace the event,
+- replace the provider,
+- replace the canonical URL.
+
 ---
 
 # Definition of Done
 
-This Product Decision is complete when:
+This Product Decision is complete because:
 
 - the external destination model is explicit,
 - all internal demo entry points converge on `#request-demo`,
@@ -484,23 +538,23 @@ This Product Decision is complete when:
 - Product and Engineering ownership boundaries are explicit,
 - prohibited fallback destinations are explicit,
 - the exact provider and canonical URL are recorded,
-- the booking page is reviewed and verified,
-- the status is changed to Approved,
+- the event name, duration, and location are recorded,
+- the booking page is reviewed,
+- booking confirmation is verified,
+- visitor cancellation is verified,
+- the status is Approved,
 - Engineering can implement without inventing a destination.
 
 ---
 
 # Approval Effect
 
-While this document remains In Progress:
+Approval of this document:
 
-- the external booking destination model is binding,
-- `/contact` and placeholder substitutions are prohibited,
-- the exact Final CTA destination remains unresolved,
-- Final CTA button implementation remains blocked.
-
-After this document becomes Approved:
-
-- Engineering may implement the Final CTA button using the recorded canonical URL,
-- the approved external booking URL becomes the source of truth for the terminal homepage conversion action,
-- no alternative destination may be substituted without a new Product decision.
+- authorizes Engineering to implement the complete Final CTA conversion flow,
+- makes the recorded Calendly URL the source of truth for the terminal homepage conversion action,
+- unblocks FAQ question 6,
+- unblocks Footer `Request a Demo`,
+- unblocks Navbar and Hero demo-routing reconciliation,
+- prohibits any alternate destination without a new Product decision,
+- enables final Session 11 integration and validation.
