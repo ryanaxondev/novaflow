@@ -3,6 +3,7 @@ import { Features } from "@/components/marketing/Features";
 import { Hero } from "@/components/marketing/Hero";
 import { Navbar } from "@/components/marketing/Navbar";
 import { Problem } from "@/components/marketing/Problem";
+import { SocialProof } from "@/components/marketing/SocialProof";
 import { Solution } from "@/components/marketing/Solution";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
         <Solution />
         <Benefits />
         <Features />
+        <SocialProof />
       </main>
     </>
   );
