@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">NovaFlow geometric N brand mark</title>
+  <g fill="#2563EB">
+    <rect x="12" y="10" width="10" height="44" rx="1"/>
+    <polygon points="20,10 31,10 52,54 41,54"/>
+    <rect x="42" y="10" width="10" height="44" rx="1"/>
+  </g>
+</svg>
