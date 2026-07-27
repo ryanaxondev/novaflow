@@ -59,7 +59,7 @@ export function Hero() {
 
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/contact"
+                href="#request-demo"
                 className={cn(
                   buttonVariants({ size: "lg" }),
                   "w-full sm:w-auto",

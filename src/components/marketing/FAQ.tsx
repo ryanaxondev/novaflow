@@ -36,6 +36,11 @@ const FAQ_ITEMS = [
     answer:
       "A self-serve free trial is not part of the current website experience. You can request a demo to discuss NovaFlow, your team’s workflows, and the illustrative plans.",
   },
+  {
+    question: "What happens after I request a demo?",
+    answer:
+      "You’ll be taken to NovaFlow’s approved booking page, where you can choose an available time for an introductory conversation about your team’s recurring workflows.",
+  },
 ] as const;
 
 export function FAQ() {

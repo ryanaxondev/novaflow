@@ -6,6 +6,7 @@ const FOOTER_NAVIGATION = [
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
+  { label: "Request a Demo", href: "#request-demo" },
 ] as const;
 
 export function Footer() {

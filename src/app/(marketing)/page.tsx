@@ -1,6 +1,7 @@
 import { Benefits } from "@/components/marketing/Benefits";
 import { FAQ } from "@/components/marketing/FAQ";
 import { Features } from "@/components/marketing/Features";
+import { FinalCTA } from "@/components/marketing/FinalCTA";
 import { Footer } from "@/components/marketing/Footer";
 import { Hero } from "@/components/marketing/Hero";
 import { Navbar } from "@/components/marketing/Navbar";
@@ -22,6 +23,7 @@ export default function Home() {
         <SocialProof />
         <Pricing />
         <FAQ />
+        <FinalCTA />
       </main>
       <Footer />
     </>

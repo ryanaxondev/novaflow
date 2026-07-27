@@ -38,10 +38,10 @@ export function Navbar() {
           </ul>
 
           <Link
-            href="#pricing"
+            href="#request-demo"
             className={buttonVariants()}
           >
-            Get Started
+            Request a Demo
           </Link>
         </nav>
       </Container>
