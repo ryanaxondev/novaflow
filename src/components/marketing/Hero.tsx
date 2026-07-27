@@ -114,7 +114,7 @@ export function Hero() {
                 </span>
                 <h2
                   id="workflow-preview-title"
-                  className="truncate text-sm font-semibold sm:text-base"
+                  className="text-sm font-semibold sm:text-base"
                 >
                   Onboarding New Employee
                 </h2>
