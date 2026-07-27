@@ -60,7 +60,7 @@ export function Features() {
   ] as const;
 
   return (
-    <Section>
+    <Section id="features">
       <Container>
         <div className="flex flex-col gap-12">
           <SectionHeader title="Capabilities built for repeatable operations" />

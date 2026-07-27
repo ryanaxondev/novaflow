@@ -1,6 +1,7 @@
 import { Benefits } from "@/components/marketing/Benefits";
 import { FAQ } from "@/components/marketing/FAQ";
 import { Features } from "@/components/marketing/Features";
+import { Footer } from "@/components/marketing/Footer";
 import { Hero } from "@/components/marketing/Hero";
 import { Navbar } from "@/components/marketing/Navbar";
 import { Pricing } from "@/components/marketing/Pricing";
@@ -22,6 +23,7 @@ export default function Home() {
         <Pricing />
         <FAQ />
       </main>
+      <Footer />
     </>
   );
 }
