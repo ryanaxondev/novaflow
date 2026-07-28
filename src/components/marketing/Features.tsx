@@ -79,7 +79,7 @@ export function Features() {
                     />
                   </span>
                   <CardTitle className="truncate">Workflow builder</CardTitle>
-                  <span className="ml-auto shrink-0 rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                  <span className="ml-auto shrink-0 rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-foreground/75">
                     Draft
                   </span>
                 </div>
