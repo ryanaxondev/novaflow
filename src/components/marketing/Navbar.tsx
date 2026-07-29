@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { BrandLockup } from "@/components/marketing/BrandLockup";
 import { MobileNavbar } from "@/components/marketing/MobileNavbar";
 import { buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
@@ -18,14 +19,14 @@ const cta = {
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b bg-background">
+    <header className="sticky top-0 z-50 border-b border-structural bg-surface-base">
       <Container>
         <div className="grid grid-cols-[1fr_auto] grid-rows-[4rem] items-center gap-x-6 md:flex md:h-16 md:justify-between">
           <Link
             href="/"
-            className="shrink-0 text-lg font-semibold"
+            className="inline-flex shrink-0 rounded-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
           >
-            NovaFlow
+            <BrandLockup size="default" />
           </Link>
 
           <nav
@@ -48,7 +49,10 @@ export function Navbar() {
 
           <Link
             href={cta.href}
-            className={cn(buttonVariants(), "hidden md:inline-flex")}
+            className={cn(
+              buttonVariants({ size: "marketing" }),
+              "hidden md:inline-flex",
+            )}
           >
             {cta.label}
           </Link>

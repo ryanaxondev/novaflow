@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { BrandLockup } from "@/components/marketing/BrandLockup";
 import { Container } from "@/components/ui/Container";
 
 const FOOTER_NAVIGATION = [
@@ -11,20 +12,20 @@ const FOOTER_NAVIGATION = [
 
 export function Footer() {
   return (
-    <footer className="border-t bg-background">
+    <footer className="border-t border-structural/20 bg-surface-contrast text-on-contrast">
       <Container>
         <div className="flex flex-col gap-8 py-10 sm:py-12 md:flex-row md:items-end md:justify-between">
           <div className="flex max-w-md flex-col items-start gap-3">
             <Link
               href="/"
-              className="rounded-sm text-lg font-semibold outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+              className="inline-flex rounded-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/70"
             >
-              NovaFlow
+              <BrandLockup size="compact" />
             </Link>
-            <p className="leading-6 text-muted-foreground">
+            <p className="leading-6 text-on-contrast/70">
               NovaFlow helps growing teams build repeatable systems.
             </p>
-            <p className="text-sm text-muted-foreground">© 2026 NovaFlow.</p>
+            <p className="text-sm text-on-contrast/70">© 2026 NovaFlow.</p>
           </div>
 
           <nav aria-label="Footer navigation">
@@ -33,7 +34,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="rounded-sm text-sm font-medium text-muted-foreground outline-none transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
+                    className="rounded-sm text-sm font-medium text-on-contrast/70 outline-none transition-colors hover:text-on-contrast focus-visible:text-on-contrast focus-visible:ring-3 focus-visible:ring-ring/70"
                   >
                     {item.label}
                   </Link>

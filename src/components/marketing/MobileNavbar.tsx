@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 type NavigationItem = {
   label: string;
@@ -56,10 +57,13 @@ export function MobileNavbar({
         aria-label={isOpen ? "Close navigation" : "Open navigation"}
         aria-expanded={isOpen}
         aria-controls="mobile-navigation-panel"
-        className={buttonVariants({
-          variant: "outline",
-          size: "icon",
-        })}
+        className={cn(
+          buttonVariants({
+            variant: "outline",
+            size: "icon",
+          }),
+          "size-11",
+        )}
         onClick={() => setIsOpen((currentState) => !currentState)}
       >
         {isOpen ? (
@@ -73,7 +77,7 @@ export function MobileNavbar({
         <nav
           id="mobile-navigation-panel"
           aria-label="Mobile navigation"
-          className="col-span-2 w-full border-t border-border py-4"
+          className="col-span-2 w-full border-t border-structural py-4"
         >
           <ul className="flex flex-col gap-1">
             {items.map((item) => (
@@ -91,7 +95,10 @@ export function MobileNavbar({
 
           <Link
             href={cta.href}
-            className={buttonVariants({ className: "mt-3 w-full" })}
+            className={buttonVariants({
+              size: "marketing",
+              className: "mt-3 w-full",
+            })}
             onClick={closeMenu}
           >
             {cta.label}
