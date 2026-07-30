@@ -47,24 +47,30 @@ export function FAQ() {
   return (
     <Section
       id="faq"
-      className="border-y bg-muted/20"
+      className="border-y border-structural bg-surface-subtle"
     >
       <Container>
-        <div className="flex flex-col gap-12">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-16">
           <SectionHeader
+            className="mx-0 items-start text-left lg:self-start"
             eyebrow="FAQ"
             title="Frequently asked questions"
             description="Answers to common questions about NovaFlow, its approach, and the current demo process."
           />
 
-          <Accordion className="mx-auto max-w-4xl border-y">
+          <Accordion className="overflow-hidden rounded-2xl border border-structural bg-surface-base px-5 sm:px-7">
             {FAQ_ITEMS.map((item) => (
               <AccordionItem
                 key={item.question}
                 value={item.question}
+                className="border-structural"
               >
-                <AccordionTrigger>{item.question}</AccordionTrigger>
-                <AccordionContent>{item.answer}</AccordionContent>
+                <AccordionTrigger className="py-6 text-base font-semibold sm:text-lg">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="max-w-2xl pb-6 text-sm sm:text-base">
+                  {item.answer}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>

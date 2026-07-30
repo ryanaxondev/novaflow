@@ -16,54 +16,54 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { cn } from "@/lib/utils";
 
-export function Pricing() {
-  const plans = [
-    {
-      name: "Starter",
-      description:
-        "For early-stage teams beginning to document and standardize recurring work.",
-      price: "$99",
-      billingLabel: "per workspace / month",
-      capabilities: [
-        "Workflow Design",
-        "Guided Execution",
-        "Centralized Knowledge",
-      ],
-      ctaLabel: "Request a Demo",
-      recommended: false,
-    },
-    {
-      name: "Pro",
-      description:
-        "For growing teams coordinating repeatable workflows across more people and responsibilities.",
-      price: "$299",
-      billingLabel: "per workspace / month",
-      capabilities: [
-        "Everything in Starter",
-        "Automation & Approvals",
-        "Analytics & Reporting",
-        "Integrations",
-      ],
-      ctaLabel: "Request a Demo",
-      recommended: true,
-    },
-    {
-      name: "Enterprise",
-      description:
-        "For organizations planning a tailored rollout and broader operational adoption.",
-      price: "Custom",
-      billingLabel: null,
-      capabilities: [
-        "Everything in Pro",
-        "Tailored rollout planning",
-      ],
-      ctaLabel: "Contact Sales",
-      recommended: false,
-    },
-  ] as const;
+const PLANS = [
+  {
+    name: "Starter",
+    description:
+      "For early-stage teams beginning to document and standardize recurring work.",
+    price: "$99",
+    billingLabel: "per workspace / month",
+    capabilities: [
+      "Workflow Design",
+      "Guided Execution",
+      "Centralized Knowledge",
+    ],
+    ctaLabel: "Request a Demo",
+    recommended: false,
+  },
+  {
+    name: "Pro",
+    description:
+      "For growing teams coordinating repeatable workflows across more people and responsibilities.",
+    price: "$299",
+    billingLabel: "per workspace / month",
+    capabilities: [
+      "Everything in Starter",
+      "Automation & Approvals",
+      "Analytics & Reporting",
+      "Integrations",
+    ],
+    ctaLabel: "Request a Demo",
+    recommended: true,
+  },
+  {
+    name: "Enterprise",
+    description:
+      "For organizations planning a tailored rollout and broader operational adoption.",
+    price: "Custom",
+    billingLabel: null,
+    capabilities: ["Everything in Pro", "Tailored rollout planning"],
+    ctaLabel: "Contact Sales",
+    recommended: false,
+  },
+] as const;
 
+export function Pricing() {
   return (
-    <Section id="pricing">
+    <Section
+      id="pricing"
+      className="bg-surface-base"
+    >
       <Container>
         <div className="flex flex-col gap-12">
           <SectionHeader
@@ -71,19 +71,23 @@ export function Pricing() {
             description="Compare illustrative packages for early-stage teams, growing teams, and organizations planning a tailored rollout."
           />
 
-          <ul className="grid gap-6 lg:grid-cols-3">
-            {plans.map((plan) => (
-              <li key={plan.name}>
+          <ul className="grid items-stretch gap-6 lg:grid-cols-3">
+            {PLANS.map((plan) => (
+              <li
+                key={plan.name}
+                className="flex"
+              >
                 <Card
                   className={cn(
-                    "h-full [--card-spacing:--spacing(6)]",
-                    plan.recommended && "ring-2 ring-primary",
+                    "h-full w-full border border-transparent bg-surface-base [--card-spacing:--spacing(6)] ring-1 ring-structural",
+                    plan.recommended &&
+                      "border-brand-blue/25 bg-surface-operational shadow-sm ring-2 ring-brand-blue",
                   )}
                 >
-                  <CardHeader className="gap-4">
-                    <div className="flex min-h-5 items-center justify-between gap-3">
+                  <CardHeader className="gap-5">
+                    <div className="flex min-h-7 flex-wrap items-start justify-between gap-3">
                       <CardTitle>
-                        <h3>{plan.name}</h3>
+                        <h3 className="text-lg font-semibold">{plan.name}</h3>
                       </CardTitle>
 
                       {plan.recommended ? (
@@ -116,7 +120,12 @@ export function Pricing() {
                         >
                           <Check
                             aria-hidden="true"
-                            className="mt-1 size-4 shrink-0 text-primary"
+                            className={cn(
+                              "mt-1 size-4 shrink-0",
+                              plan.recommended
+                                ? "text-brand-blue"
+                                : "text-muted-foreground",
+                            )}
                             strokeWidth={2}
                           />
                           <span>{capability}</span>
@@ -125,13 +134,18 @@ export function Pricing() {
                     </ul>
                   </CardContent>
 
-                  <CardFooter>
+                  <CardFooter
+                    className={cn(
+                      "border-structural bg-surface-subtle",
+                      plan.recommended && "bg-surface-operational",
+                    )}
+                  >
                     <Link
                       href="#request-demo"
                       className={cn(
                         buttonVariants({
                           variant: plan.recommended ? "default" : "outline",
-                          size: "lg",
+                          size: "marketing",
                         }),
                         "w-full",
                       )}
